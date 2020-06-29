@@ -30,6 +30,7 @@ import com.itextpdf.text.Image;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
+import javax.swing.JFileChooser;
 
 
 
@@ -67,7 +68,6 @@ public class PDForm extends javax.swing.JFrame {
         lbl_tipoenvio = new javax.swing.JLabel();
         lbl_cuenta = new javax.swing.JLabel();
         btn_generar = new javax.swing.JButton();
-        dateChooser = new com.toedter.calendar.JDateChooser();
         txt_vendedor = new javax.swing.JTextField();
         txt_nombre = new javax.swing.JTextField();
         txt_cp = new javax.swing.JTextField();
@@ -192,8 +192,7 @@ public class PDForm extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lbl_fecha)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(dateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(138, 138, 138))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lbl_vendedor)
                                         .addGap(18, 18, 18)
@@ -233,9 +232,7 @@ public class PDForm extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_fecha)
-                    .addComponent(dateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lbl_fecha)
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_vendedor)
@@ -269,7 +266,7 @@ public class PDForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_generarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_generarActionPerformed
-        writePDF();
+        crearPDF();
     }//GEN-LAST:event_btn_generarActionPerformed
 
     private void txt_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombreActionPerformed
@@ -319,7 +316,6 @@ public class PDForm extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> box_formapago;
     private javax.swing.JButton btn_generar;
-    private com.toedter.calendar.JDateChooser dateChooser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
@@ -341,16 +337,18 @@ public class PDForm extends javax.swing.JFrame {
     private javax.swing.JTextField txt_vendedor;
     // End of variables declaration//GEN-END:variables
 
-    private static void writePDF() {
+    private void crearPDF() {
  
         Document document = new Document();
  
         try {
-        	String path = new File(".").getCanonicalPath();
-        	String FILE_NAME = path + "/ticket.pdf";
-        	
-            PdfWriter.getInstance(document, new FileOutputStream(new File(FILE_NAME)));
- 
+
+            JFileChooser selectorRuta = new JFileChooser();
+            selectorRuta.showOpenDialog(null);
+            selectorRuta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+            File archivo = selectorRuta.getSelectedFile();
+            PdfWriter.getInstance(document, new FileOutputStream(archivo));
+            
             document.open();
  
             Paragraph paragraphHello = new Paragraph();
@@ -362,7 +360,7 @@ public class PDForm extends javax.swing.JFrame {
  
             Phrase line1 = new Phrase();
             
-            line1.add("Nombre: "  );
+            line1.add("Nombre: " + txt_nombre.getText());
             
             document.add(Chunk.NEWLINE);
  
