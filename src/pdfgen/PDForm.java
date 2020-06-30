@@ -5,32 +5,20 @@
  */
 package pdfgen;
 
-import java.awt.Color;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javafx.scene.control.Cell;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.pdf.PdfWriter;
-import com.itextpdf.text.Font;
-import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
 import com.itextpdf.text.Element;
-import com.itextpdf.text.Font.FontFamily;
-import com.itextpdf.text.Image;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import javax.swing.JFileChooser;
+import javax.swing.table.DefaultTableModel;
 
 
 
@@ -67,7 +55,7 @@ public class PDForm extends javax.swing.JFrame {
         lbl_tel = new javax.swing.JLabel();
         lbl_tipoenvio = new javax.swing.JLabel();
         lbl_cuenta = new javax.swing.JLabel();
-        btn_generar = new javax.swing.JButton();
+        btn_imprimir = new javax.swing.JButton();
         txt_vendedor = new javax.swing.JTextField();
         txt_nombre = new javax.swing.JTextField();
         txt_cp = new javax.swing.JTextField();
@@ -77,7 +65,15 @@ public class PDForm extends javax.swing.JFrame {
         txt_telefono = new javax.swing.JTextField();
         txt_cuenta = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblDatos = new javax.swing.JTable();
+        btn_agregar = new javax.swing.JButton();
+        lbl_cantidad = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        lbl_descripcion = new javax.swing.JLabel();
+        txt_descripcion = new javax.swing.JTextField();
+        lbl_precio = new javax.swing.JLabel();
+        txt_precio = new javax.swing.JTextField();
+        spin_cantidad = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -115,25 +111,19 @@ public class PDForm extends javax.swing.JFrame {
         lbl_cuenta.setFont(new java.awt.Font("Arial Narrow", 1, 14)); // NOI18N
         lbl_cuenta.setText("Cuenta:");
 
-        btn_generar.setBackground(new java.awt.Color(255, 255, 255));
-        btn_generar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btn_generar.setForeground(new java.awt.Color(51, 51, 51));
-        btn_generar.setText("Generar factura");
-        btn_generar.setFocusPainted(false);
-        btn_generar.addActionListener(new java.awt.event.ActionListener() {
+        btn_imprimir.setBackground(new java.awt.Color(255, 255, 255));
+        btn_imprimir.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_imprimir.setText("Imprimir");
+        btn_imprimir.setFocusPainted(false);
+        btn_imprimir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_generarActionPerformed(evt);
+                btn_imprimirActionPerformed(evt);
             }
         });
 
         txt_vendedor.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
         txt_nombre.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
-        txt_nombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_nombreActionPerformed(evt);
-            }
-        });
 
         txt_cp.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
@@ -148,26 +138,47 @@ public class PDForm extends javax.swing.JFrame {
 
         txt_cuenta.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "Cantidad", "Descripción", "Precio", "Importe"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblDatos);
+
+        btn_agregar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btn_agregar.setText("Agregar");
+        btn_agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agregarActionPerformed(evt);
+            }
+        });
+
+        lbl_cantidad.setText("Cantidad:");
+
+        lbl_descripcion.setText("Descripción:");
+
+        lbl_precio.setText("Precio:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(346, 346, 346)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_agregar)
+                .addGap(71, 71, 71)
+                .addComponent(btn_imprimir)
+                .addGap(241, 241, 241))
+            .addGroup(layout.createSequentialGroup()
                 .addGap(125, 125, 125)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lbl_formapago)
                         .addGap(18, 18, 18)
@@ -211,26 +222,30 @@ public class PDForm extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(lbl_tel)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(txt_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(txt_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                    .addComponent(jSeparator1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbl_cantidad)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(spin_cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47)
+                                .addComponent(lbl_descripcion)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txt_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 349, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl_precio)
+                                .addGap(18, 18, 18)
+                                .addComponent(txt_precio, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(0, 117, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(346, 346, 346)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_generar)
-                .addGap(394, 394, 394))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 611, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
                 .addGap(32, 32, 32)
                 .addComponent(lbl_fecha)
                 .addGap(37, 37, 37)
@@ -255,23 +270,47 @@ public class PDForm extends javax.swing.JFrame {
                     .addComponent(txt_cuenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_tipoenvio)
                     .addComponent(txt_tipoenvio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btn_generar)
-                .addGap(42, 42, 42))
+                .addGap(36, 36, 36)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbl_cantidad)
+                        .addComponent(spin_cantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbl_descripcion)
+                        .addComponent(txt_descripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbl_precio)
+                        .addComponent(txt_precio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_imprimir)
+                    .addComponent(btn_agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_generarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_generarActionPerformed
+    private void btn_imprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_imprimirActionPerformed
         crearPDF();
-    }//GEN-LAST:event_btn_generarActionPerformed
+    }//GEN-LAST:event_btn_imprimirActionPerformed
 
-    private void txt_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_nombreActionPerformed
-
-    }//GEN-LAST:event_txt_nombreActionPerformed
+    private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
+         DefaultTableModel modelo=(DefaultTableModel) tblDatos.getModel();
+         
+         Object [] fila=new Object[4];
+         
+         fila[0]=spin_cantidad.getValue(); 
+         fila[1]=txt_descripcion.getText(); 
+         fila[2]=txt_precio.getText(); 
+         
+         modelo.addRow(fila);
+         tblDatos.setModel(modelo); 
+          
+    }//GEN-LAST:event_btn_agregarActionPerformed
     
 
 
@@ -315,23 +354,31 @@ public class PDForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> box_formapago;
-    private javax.swing.JButton btn_generar;
+    private javax.swing.JButton btn_agregar;
+    private javax.swing.JButton btn_imprimir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lbl_cantidad;
     private javax.swing.JLabel lbl_cp;
     private javax.swing.JLabel lbl_cuenta;
+    private javax.swing.JLabel lbl_descripcion;
     private javax.swing.JLabel lbl_direccion;
     private javax.swing.JLabel lbl_fecha;
     private javax.swing.JLabel lbl_formapago;
     private javax.swing.JLabel lbl_nombre;
+    private javax.swing.JLabel lbl_precio;
     private javax.swing.JLabel lbl_tel;
     private javax.swing.JLabel lbl_tipoenvio;
     private javax.swing.JLabel lbl_vendedor;
+    private javax.swing.JSpinner spin_cantidad;
+    private javax.swing.JTable tblDatos;
     private javax.swing.JTextField txt_cp;
     private javax.swing.JTextField txt_cuenta;
+    private javax.swing.JTextField txt_descripcion;
     private javax.swing.JTextField txt_direccion;
     private javax.swing.JTextField txt_nombre;
+    private javax.swing.JTextField txt_precio;
     private javax.swing.JTextField txt_telefono;
     private javax.swing.JTextField txt_tipoenvio;
     private javax.swing.JTextField txt_vendedor;
@@ -359,12 +406,42 @@ public class PDForm extends javax.swing.JFrame {
             document.add(Chunk.NEWLINE);
  
             Phrase line1 = new Phrase();
+            Phrase line2 = new Phrase();
+            Phrase line3 = new Phrase();
+            Phrase line4 = new Phrase();
+            Phrase line5 = new Phrase();
+            Phrase line6 = new Phrase();
+            Phrase line7 = new Phrase();
+            Phrase line8 = new Phrase();
             
-            line1.add("Nombre: " + txt_nombre.getText());
+            line1.add("Nombre: "  + txt_nombre.getText());
+            line2.add("Vendedor: "  + txt_vendedor.getText());
+            line3.add("Dirección: "  + txt_direccion.getText());
+            line4.add("C.P.: "  + txt_cp.getText());
+            line5.add("Tel: "  + txt_telefono.getText());
+            line3.add("Forma de Pago: "  + box_formapago.getSelectedItem());
+            line4.add("Cuenta: "  + txt_cuenta.getText());
+            line5.add("Tipo de envio: "  + txt_tipoenvio.getText());
             
             document.add(Chunk.NEWLINE);
  
             document.add(line1);
+            document.add(Chunk.NEWLINE);
+            document.add(line2);
+            document.add(Chunk.NEWLINE);
+            document.add(line3);
+            document.add(Chunk.NEWLINE);
+            document.add(line4);
+            document.add(Chunk.NEWLINE);
+            document.add(line5);
+            document.add(Chunk.NEWLINE);
+            document.add(line6);
+            document.add(Chunk.NEWLINE);
+            document.add(Chunk.NEWLINE);
+            document.add(line7);
+            document.add(Chunk.NEWLINE);
+            document.add(line8);
+            document.add(Chunk.NEWLINE);
             
             // Creating a table         
             PdfPTable table = new PdfPTable(5);    
@@ -381,21 +458,17 @@ public class PDForm extends javax.swing.JFrame {
             table.addCell("Precio");
             table.addCell("Importe");
             
-
-            for (int i = 0; i < 100; i++) {
-                table.addCell("aime" + i);
-                table.addCell(des);
-                table.addCell("destination" + i);
-                table.addCell("extension" + i);
-            }
+            table.addCell("aime");
+            table.addCell(des);
+            table.addCell(txt_descripcion.getText());
+            table.addCell(txt_precio.getText());
+          
             document.add(table);               
          
             document.close();
+            
         } catch (FileNotFoundException | DocumentException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
- 
     }
 }
