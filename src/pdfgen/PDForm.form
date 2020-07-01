@@ -28,158 +28,210 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="346" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
-          </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="btn_agregar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-              <Component id="btn_imprimir" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="241" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="125" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="lbl_formapago" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="box_formapago" min="-2" pref="88" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                      <Component id="lbl_cuenta" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="txt_cuenta" min="-2" pref="148" max="-2" attributes="0"/>
+              <EmptySpace pref="92" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="309" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="lbl_nombre" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txt_nombre" min="-2" pref="195" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="lbl_direccion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txt_direccion" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lbl_fecha" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lbl_vendedor" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="txt_vendedor" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                              <Component id="lbl_cp" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txt_cp" min="-2" pref="74" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lbl_tipoenvio" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+                                      <Component id="spin_Cantidad" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                                      <Component id="lbl_descripcion" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txt_tipoenvio" min="-2" pref="109" max="-2" attributes="0"/>
+                                      <Component id="txt_descripcion" min="-2" pref="349" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Component id="lbl_tel" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="txt_telefono" min="-2" pref="118" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="lbl_cantidad" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                          </Group>
-                      </Group>
-                  </Group>
-                  <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="lbl_cantidad" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="611" max="-2" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="spin_cantidad" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-                              <Component id="lbl_descripcion" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="txt_descripcion" min="-2" pref="349" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="lbl_precio" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="txt_precio" min="-2" pref="59" max="-2" attributes="0"/>
+                              <Component id="spin_Precio" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lbl_formapago" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="box_formapago" min="-2" pref="88" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                              <Component id="lbl_cuenta" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="txt_cuenta" min="-2" pref="148" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lbl_nombre" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbl_direccion" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="txt_nombre" alignment="0" min="-2" pref="195" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                      <Component id="txt_direccion" min="-2" pref="194" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="142" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="lbl_fecha" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="fecha" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="lbl_vendedor" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="txt_vendedor" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                      <Component id="lbl_cp" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="txt_cp" min="-2" pref="74" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="lbl_tipoenvio" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="txt_tipoenvio" min="-2" pref="109" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <Component id="lbl_tel" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="txt_telefono" min="-2" pref="118" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="jSeparator1" alignment="0" min="-2" pref="750" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="74" pref="74" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="611" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="352" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="lbl_reex" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="btn_agregar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="btn_imprimir" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                              <Component id="lbl_total" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txt_enviop" alignment="0" pref="51" max="32767" attributes="0"/>
+                          <Component id="txt_reex" alignment="0" pref="51" max="32767" attributes="0"/>
+                          <Component id="lbl_result" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="0" pref="117" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-              <Component id="jLabel1" pref="46" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-              <Component id="lbl_fecha" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbl_vendedor" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_vendedor" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbl_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbl_direccion" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_direccion" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbl_cp" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_cp" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbl_tel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lbl_formapago" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="box_formapago" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbl_cuenta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_cuenta" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lbl_tipoenvio" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txt_tipoenvio" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-              <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+              <Component id="jLabel1" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lbl_cantidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="spin_cantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="lbl_fecha" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lbl_vendedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_vendedor" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="txt_direccion" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbl_cp" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_cp" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbl_tel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lbl_formapago" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="box_formapago" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbl_cuenta" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_cuenta" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbl_tipoenvio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_tipoenvio" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lbl_descripcion" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_descripcion" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lbl_precio" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="spin_Precio" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lbl_nombre" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                              <Component id="lbl_direccion" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lbl_cantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="spin_Cantidad" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="140" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="txt_enviop" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="lbl_reex" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txt_reex" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="lbl_total" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lbl_result" alignment="3" min="-2" pref="15" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btn_agregar" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
+                              <Component id="btn_imprimir" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="lbl_descripcion" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_descripcion" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="lbl_precio" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txt_precio" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="fecha" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="187" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btn_imprimir" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn_agregar" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -424,9 +476,56 @@
         <Property name="text" type="java.lang.String" value="Precio:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txt_precio">
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ENVIO:"/>
+      </Properties>
     </Component>
-    <Component class="javax.swing.JSpinner" name="spin_cantidad">
+    <Component class="javax.swing.JLabel" name="lbl_reex">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="REEX:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_total">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="TOTAL"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_enviop">
+    </Component>
+    <Component class="javax.swing.JTextField" name="txt_reex">
+    </Component>
+    <Component class="javax.swing.JLabel" name="lbl_result">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="spin_Cantidad">
+      <Properties>
+        <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+          <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="spin_Precio">
+      <Properties>
+        <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
+          <SpinnerModel initial="0" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="fecha">
     </Component>
   </SubComponents>
 </Form>
