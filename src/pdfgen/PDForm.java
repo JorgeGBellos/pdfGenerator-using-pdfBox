@@ -20,7 +20,9 @@ import com.itextpdf.text.pdf.PdfPTable;
 import java.text.SimpleDateFormat;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
+import org.apache.commons.io.FilenameUtils;
 
 
 
@@ -466,12 +468,20 @@ public class PDForm extends javax.swing.JFrame {
         Document document = new Document();
  
         try {
-
+            
             JFileChooser selectorRuta = new JFileChooser();
             int botonClickeado = selectorRuta.showOpenDialog(this);
             if( botonClickeado == JFileChooser.APPROVE_OPTION){
                 selectorRuta.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+                
                 File archivo = selectorRuta.getSelectedFile();
+                
+                if(!(FilenameUtils.getExtension(archivo.getName()).equalsIgnoreCase("pdf"))){
+                    
+                    archivo = new File(archivo.toString()+".pdf");
+                    archivo = new File(archivo.getParentFile(),FilenameUtils.getBaseName(archivo.getName())+".pdf");
+                    
+                }
                 PdfWriter.getInstance(document, new FileOutputStream(archivo));
 
                 document.open();
@@ -502,7 +512,7 @@ public class PDForm extends javax.swing.JFrame {
                 line2.add("Vendedor: "  + txt_vendedor.getText());
                 line3.add("Dirección: "  + txt_direccion.getText()+" ");
                 line3.add("Forma de Pago: "  + box_formapago.getSelectedItem());
-                line4.add("C.P.: "  + txt_cp.getText());
+                line4.add("C.P.: "  + txt_cp.getText()+" ");
                 line4.add("Cuenta: "  + txt_cuenta.getText()+" ");
                 line5.add("Tel: "  + txt_telefono.getText()+" ");
                 line5.add("Tipo de envio: "  + txt_tipoenvio.getText());
@@ -537,12 +547,10 @@ public class PDForm extends javax.swing.JFrame {
                 table.addCell("Importe");
 
                 //Datos de la tabla
-                for(int i=0;i<tblDatos.getRowCount();i++){
-                    for(int z=0;z < tblDatos.getColumnCount();z++){
-                        table.addCell((PdfPCell) tblDatos.getValueAt(i,z));
-                    }
-                }
-
+                
+                table.addCell(Integer.toString((int)spin_Cantidad.getValue()));
+                table.addCell(txt_descripcion.getText());
+                table.addCell(Integer.toString((int)spin_Precio.getValue()));
 
                 int can = (Integer)spin_Cantidad.getValue();
                 int pre = (Integer)spin_Precio.getValue();
@@ -579,6 +587,7 @@ public class PDForm extends javax.swing.JFrame {
                 document.add(table2);
 
                 document.close();
+                
             }else if( botonClickeado == JFileChooser.CANCEL_OPTION){
                 JOptionPane.showMessageDialog(null, "Se canceló el proceso");
             }
